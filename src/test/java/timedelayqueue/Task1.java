@@ -61,6 +61,8 @@ public class Task1 {
         String msgText = gson.toJson("test");
         TransientPubSubMessage msg1 = new TransientPubSubMessage(sndID, rcvID, msgText, MSG_LIFETIME);
         PubSubMessage          msg2 = new PubSubMessage(sndID, rcvID, msgText);
+        System.out.println("Tran msg1 " + msg1.getId());
+        System.out.println("Reg msg2 " + msg2.getId());
         tdq.add(msg1);
         tdq.add(msg2);
         try {
